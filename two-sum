@@ -1,0 +1,20 @@
+#QUESTION DESCRIPTION:
+#Given an array of integers (nums) and an integer (target), return indices of the two numbers such that they add up to target.
+#You may assume that each input would have exactly one solution, and you may not use the same element twice.
+#You can return the answer in any order.
+
+#MY RESPONSE:
+
+class Solution(object):
+    def twoSum(self, nums, target):
+        
+        #I begin by creating a for-loop to go through the integers in nums. nums[i] will be the first addend 
+        for i in range(len(nums) - 1):
+        
+          #the inner for-loop seeks the second addend nums[j]
+          #I make sure to start j 1 index ahead of i so we don't have to worry for integers which added to themselves equals the target
+            for j in range(i + 1, len(nums)):
+            
+              #the important step: checking to see if the addends sum to the integer value of the target
+                if nums[i] + nums[j] == target:
+                    return [i, j]
